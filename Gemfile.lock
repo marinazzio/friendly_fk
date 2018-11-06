@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    friendly_fk (1.0.11)
+    friendly_fk (1.0.12)
       activerecord
       pg
 

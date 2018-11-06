@@ -32,14 +32,14 @@ RSpec.describe FriendlyFk do
     it 'adds foreign key with default name' do
       connection.add_foreign_key :child_table, :parent_table, column: :parent_id
 
-      expect(connection.foreign_key_exists?(:child_table, name: 'fk_child_table__parent_table')).to be_truthy
+      expect(connection.foreign_key_exists?(:child_table, name: 'fk_child_table__parent_table')).to be true
     end
 
     it 'removes foreign key with default name' do
       connection.add_foreign_key :child_table, :parent_table, column: :parent_id
       connection.remove_foreign_key :child_table, column: :parent_id
 
-      expect(connection.foreign_key_exists?(:child_table, name: 'fk_child_table__parent_table')).to be_falsy
+      expect(connection.foreign_key_exists?(:child_table, name: 'fk_child_table__parent_table')).to be false
     end
   end
 end
