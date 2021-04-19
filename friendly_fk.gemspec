@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
     'source_code_uri' => 'https://github.com/marinazzio/friendly_fk'
   }
 
-  spec.required_ruby_version = '>= 2.3.8'
+  spec.required_ruby_version = '>= 2.5.9'
 
   spec.metadata['allowed_push_host'] = 'https://rubygems.org'
 
