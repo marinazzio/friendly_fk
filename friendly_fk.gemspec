@@ -16,10 +16,11 @@ Gem::Specification.new do |spec|
     'bug_tracker_uri' => 'https://github.com/marinazzio/friendly_fk/issues',
     'documentation_uri' => 'https://github.com/marinazzio/friendly_fk/blob/master/README.md',
     'homepage_uri' => 'https://github.com/marinazzio/friendly_fk',
-    'source_code_uri' => 'https://github.com/marinazzio/friendly_fk'
+    'source_code_uri' => 'https://github.com/marinazzio/friendly_fk',
+    'rubygems_mfa_required' => 'true'
   }
 
-  spec.required_ruby_version = '>= 2.5.9'
+  spec.required_ruby_version = '>= 2.6.0'
 
   spec.metadata['allowed_push_host'] = 'https://rubygems.org'
 

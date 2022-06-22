@@ -1,7 +1,7 @@
 module ARTest
   class << self
     def connect
-      ActiveRecord::Base.establish_connection config[ENV['DB'] || 'postgres']
+      ActiveRecord::Base.establish_connection config[ENV.fetch('DB', 'postgres')]
     end
 
     private
