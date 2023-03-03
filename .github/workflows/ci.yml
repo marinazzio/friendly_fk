@@ -8,9 +8,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install deps
-        run: 
+        run: bundle install
       
-      - name: 
-
+      - name: Run rubocop
+        run: bundle exec rubocop
 
   rspec:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install deps
+        run: bundle install
+      
+      - name: Run RSpec
+        run: bundle exec rspec spec
