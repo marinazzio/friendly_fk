@@ -1,0 +1,16 @@
+name: ci
+
+on:
+  push: {}
+
+jobs:
+  rubocop:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install deps
+        run: 
+      
+      - name: 
+
+
+  rspec:
