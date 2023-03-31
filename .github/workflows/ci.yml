@@ -7,8 +7,8 @@ jobs:
   rubocop:
     runs-on: ubuntu-latest
     steps:
-      - name: Install deps
-        run: bundle install
+      - name: Setup Ruby
+        uses: ruby/setup-ruby
       
       - name: Run rubocop
         run: bundle exec rubocop
@@ -16,8 +16,8 @@ jobs:
   rspec:
     runs-on: ubuntu-latest
     steps:
-      - name: Install deps
-        run: bundle install
-      
+      - name: Setup Ruby
+        uses: ruby/setup-ruby
+
       - name: Run RSpec
         run: bundle exec rspec spec
