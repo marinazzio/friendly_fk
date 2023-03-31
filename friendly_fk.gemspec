@@ -33,10 +33,4 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'activerecord'
-
-  spec.add_development_dependency 'bundler'
-  spec.add_development_dependency 'mysql2'
-  spec.add_development_dependency 'pg'
-  spec.add_development_dependency 'rake'
-  spec.add_development_dependency 'rspec'
 end
