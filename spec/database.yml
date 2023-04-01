@@ -10,3 +10,4 @@ mysql:
   username: test_user
   password: test_user
   encoding: utf8
+  port: 3306
