@@ -7,8 +7,8 @@ postgres:
 mysql:
   adapter: mysql2
   database: friendly_fk_test
-  username: test_user
-  password: test_user
+  username: root
+  password: root
   encoding: utf8
   host: localhost
   port: 3306
