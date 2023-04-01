@@ -7,5 +7,6 @@ postgres:
 mysql:
   adapter: mysql2
   database: friendly_fk_test
-  username:
+  username: test_user
+  password: test_user
   encoding: utf8
