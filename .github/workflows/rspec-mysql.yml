@@ -12,7 +12,7 @@ jobs:
         mysql-version: ['5.7']
 
     env:
-      db: mysql
+      DB: mysql
       RAILS_ENV: test
 
     services:
