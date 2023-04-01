@@ -10,4 +10,5 @@ mysql:
   username: test_user
   password: test_user
   encoding: utf8
+  host: localhost
   port: 3306
