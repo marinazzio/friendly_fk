@@ -16,10 +16,11 @@ Gem::Specification.new do |spec|
     'bug_tracker_uri' => 'https://github.com/marinazzio/friendly_fk/issues',
     'documentation_uri' => 'https://github.com/marinazzio/friendly_fk/blob/master/README.md',
     'homepage_uri' => 'https://github.com/marinazzio/friendly_fk',
-    'source_code_uri' => 'https://github.com/marinazzio/friendly_fk'
+    'source_code_uri' => 'https://github.com/marinazzio/friendly_fk',
+    'rubygems_mfa_required' => 'true'
   }
 
-  spec.required_ruby_version = '>= 2.3.8'
+  spec.required_ruby_version = '>= 2.6.0'
 
   spec.metadata['allowed_push_host'] = 'https://rubygems.org'
 
@@ -32,10 +33,4 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'activerecord'
-
-  spec.add_development_dependency 'bundler'
-  spec.add_development_dependency 'mysql2'
-  spec.add_development_dependency 'pg'
-  spec.add_development_dependency 'rake'
-  spec.add_development_dependency 'rspec'
 end

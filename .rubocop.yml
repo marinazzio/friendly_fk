@@ -1,12 +1,13 @@
 # softened a bit with http://relaxed.ruby.style/rubocop.yml
 
 require:
+  - rubocop-rake
   - rubocop-rspec
 
 inherit_from: .rubocop_todo.yml
 
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.6
   # Cop names are not d§splayed in offense messages by default. Change behavior
   # by overriding DisplayCopNames, or by giving the -D/--display-cop-names
   # option.
@@ -16,14 +17,12 @@ AllCops:
   # -S/--display-style-guide option.
   DisplayStyleGuide: false
 
-# Gems in consecutive lines should be alphabetically sorted
-Bundler/OrderedGems:
-  TreatCommentsAsGroupSeparators: true
-
-Gemspec/OrderedDependencies:
-  Enabled: true
+  NewCops: enable
 
 # Layout ######################################################################
+Layout/LineLength:
+  Max: 120
+
 # Checks that the closing brace in an array literal is either on the same line
 # as the last array element, or a new line.
 Layout/MultilineArrayBraceLayout:
@@ -112,7 +111,7 @@ Style/StringMethods:
   Enabled: true
 
 # Checks for %q/%Q when single quotes or double quotes would do.
-Style/UnneededPercentQ:
+Style/RedundantPercentQ:
   Enabled: false
 
 # Metrics #####################################################################
@@ -141,10 +140,6 @@ Metrics/ClassLength:
 Metrics/CyclomaticComplexity:
   Enabled: true
   Max: 17
-
-# Limit lines to 80 characters.
-Metrics/LineLength:
-  Max: 120
 
 # Avoid methods longer than 10 lines of code.
 Metrics/MethodLength:
@@ -175,34 +170,6 @@ Lint/AmbiguousRegexpLiteral:
 # for block arguments or block local variables.
 Lint/ShadowingOuterLocalVariable:
   Enabled: false
-
-# Performance #################################################################
-
-# This cop identifies places where `Hash#merge!` can be replaced by
-# `Hash#[]=`.
-Performance/RedundantMerge:
-  Enabled: true
-  MaxKeyValuePairs: 1
-
-# Rails #######################################################################
-
-# Enables Rails cops.
-Rails:
-  Enabled: true
-
-# Enforces consistent use of action filter methods.
-Rails/ActionFilter:
-  Enabled: true
-  EnforcedStyle: action
-
-# Prefer has_many :through to has_and_belongs_to_many.
-Rails/HasAndBelongsToMany:
-  Enabled: false
-
-# This cop checks that environments called with Rails.env predicates exist.
-Rails/UnknownEnv:
-  Enabled: true
-  Environments:	development, test, production, stage
 
 # RSpec #######################################################################
 
