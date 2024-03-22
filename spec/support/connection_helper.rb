@@ -1,10 +1,14 @@
 module ARTest
   class << self
     def connect
-      ActiveRecord::Base.establish_connection config[ENV.fetch('DB', 'postgres')]
+      ActiveRecord::Base.establish_connection connection_string_or_config
     end
 
     private
+
+    def connection_string_or_config
+      ENV.fetch('TEST_DATABASE_URL', nil) || config[ENV.fetch('DB', 'postgres')]
+    end
 
     def config
       @config ||= read_config
