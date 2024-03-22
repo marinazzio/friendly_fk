@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'friendly_fk/version'
 
 module ActiveRecord
