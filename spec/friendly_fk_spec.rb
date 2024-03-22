@@ -3,7 +3,7 @@ require 'support/connection_helper'
 
 RSpec.describe FriendlyFk do
   it 'has a version number' do
-    expect(FriendlyFk::VERSION).not_to be nil
+    expect(FriendlyFk::VERSION).not_to be_nil
   end
 
   context 'with base' do
