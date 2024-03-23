@@ -10,6 +10,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'bundler-audit', require: false
   gem 'mysql2', require: false
   gem 'pg', require: false
   gem 'rspec', require: false
