@@ -187,13 +187,6 @@ RSpec/ExampleWording:
     not: does not
   IgnoredWords: []
 
-# Checks the file and folder naming of the spec file.
-RSpec/FilePath:
-  Enabled: true
-  CustomTransform:
-    RuboCop: rubocop
-    RSpec: rspec
-
 RSpec/ImplicitExpect:
   EnforcedStyle: should
   Enabled: true
