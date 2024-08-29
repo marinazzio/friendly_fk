@@ -8,23 +8,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+      id-token: write
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    # Set up
+    - uses: actions/checkout@v4
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        bundler-cache: true
+        ruby-version: ruby
 
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 3.3.4
-          bundler-cache: true
-
-      - name: Install dependencies
-        run: bundle install
-
-      - name: Build gem
-        run: gem build friendly_fk.gemspec
-
-      - name: Publish to RubyGems
-        env:
-          RUBYGEMS_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
-        run: gem push friendly_fk-*.gem
+    # Release
+    - uses: rubygems/release-gem@v1
