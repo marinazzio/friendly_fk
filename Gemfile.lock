@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    friendly_fk (1.0.26)
+    friendly_fk (1.0.27)
       activerecord
 
 GEM
