@@ -1,6 +1,10 @@
 name: BundleAudit
 on: push
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   bundle_audit:
     name: bundle_audit
