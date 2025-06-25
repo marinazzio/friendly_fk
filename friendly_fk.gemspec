@@ -13,6 +13,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/marinazzio/friendly_fk'
 
   spec.metadata = {
+    'allowed_push_host' => 'https://rubygems.org',
     'bug_tracker_uri' => 'https://github.com/marinazzio/friendly_fk/issues',
     'documentation_uri' => 'https://github.com/marinazzio/friendly_fk/blob/master/README.md',
     'homepage_uri' => 'https://github.com/marinazzio/friendly_fk',
@@ -21,8 +22,6 @@ Gem::Specification.new do |spec|
   }
 
   spec.required_ruby_version = '>= 3.2.0'
-
-  spec.metadata['allowed_push_host'] = 'https://rubygems.org'
 
   spec.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
