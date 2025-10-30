@@ -16,11 +16,9 @@ task 'release:source_control_push', [:remote] do |_, args|
     Bundler::GemHelper.instance.send(:tag_version) do
       remote = args[:remote] || Bundler::GemHelper.instance.send(:default_remote)
       current_branch = `git rev-parse --abbrev-ref HEAD`.strip
-
       # Skip pushing branch if in detached HEAD state (e.g., in GitHub Actions)
       # In this case, only push the tag
       sh "git push #{remote} refs/heads/#{current_branch}" if current_branch != 'HEAD'
-
       version_tag = Bundler::GemHelper.instance.send(:version_tag)
       sh "git push #{remote} refs/tags/#{version_tag}"
       Bundler.ui.confirm 'Pushed git commits and release tag.'
