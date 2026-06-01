@@ -11,3 +11,8 @@
 # rspec failure tracking
 .rspec_status
 .beads/
+
+# Beads / Dolt files (added by bd init)
+.dolt/
+*.db
+.beads-credential-key
