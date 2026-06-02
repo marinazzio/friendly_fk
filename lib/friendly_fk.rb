@@ -2,22 +2,25 @@
 
 require 'friendly_fk/version'
 
-module ActiveRecord
-  module ConnectionAdapters # :nodoc:
-    module SchemaStatements
-      def foreign_key_options(from_table, to_table, options) # :nodoc:
-        options = options.dup
-        options[:to_table] = to_table
-        options[:column] ||= foreign_key_column_for(to_table)
-        options[:name]   ||= foreign_key_name(from_table, options)
-        options
-      end
+module FriendlyFk
+  # Overrides the default foreign key name with a readable one built from the
+  # parent and child table names, while delegating column resolution (including
+  # composite primary keys) to ActiveRecord. Prepended so +super+ keeps working
+  # across ActiveRecord versions.
+  module SchemaStatements
+    def foreign_key_options(from_table, to_table, options) # :nodoc:
+      name_given = options.key?(:name)
+      options = super
+      options[:name] = friendly_fk_name(from_table, to_table) unless name_given
+      options
+    end
 
-      def foreign_key_name(from_table, options)
-        options.fetch(:name) do
-          "fk_#{from_table}__#{options[:to_table]}"
-        end
-      end
+    private
+
+    def friendly_fk_name(from_table, to_table)
+      "fk_#{from_table}__#{to_table}"
     end
   end
 end
+
+ActiveRecord::ConnectionAdapters::SchemaStatements.prepend(FriendlyFk::SchemaStatements)
