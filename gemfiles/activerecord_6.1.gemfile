@@ -1,0 +1,17 @@
+# frozen_string_literal: true
+
+# Pins ActiveRecord to the 6.1 series so CI exercises the lower bound of the
+# range declared in the gemspec ('>= 6.1'). Only the dependencies needed to run
+# the spec suite are listed — linting runs on the latest Ruby via rubocop.yml.
+source 'https://rubygems.org'
+
+gemspec path: '..'
+
+gem 'activerecord', '~> 6.1.0'
+
+gem 'mysql2', require: false
+gem 'pg', require: false
+gem 'rake'
+gem 'rspec', require: false
+gem 'simplecov', require: false
+gem 'simplecov-rcov', require: false
