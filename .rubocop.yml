@@ -4,8 +4,6 @@ plugins:
   - rubocop-rake
   - rubocop-rspec
 
-inherit_from: .rubocop_todo.yml
-
 AllCops:
   TargetRubyVersion: 3.2
   # Cop names are not displayed in offense messages by default. Change behavior
