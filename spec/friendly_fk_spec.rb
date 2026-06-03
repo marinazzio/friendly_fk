@@ -36,7 +36,7 @@ RSpec.describe FriendlyFk do
       expect(connection.foreign_key_exists?(:child_table, name: 'fk_child_table__parent_table')).to be true
     end
 
-    it 'adds foreign key without explicit column using the AR-derived default column' do
+    it 'adds foreign key without explicit column using the AR-derived default column', :aggregate_failures do
       connection.add_foreign_key :child_table, :parent_table
 
       fk = connection.foreign_keys(:child_table).first
