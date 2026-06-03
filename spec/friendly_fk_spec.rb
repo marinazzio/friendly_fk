@@ -73,7 +73,10 @@ RSpec.describe FriendlyFk do
     end
   end
 
-  context 'with a composite primary key parent' do
+  # Composite foreign keys are an ActiveRecord 7.1+ feature; AR delegates column
+  # resolution here, so this only applies where AR itself supports it.
+  context 'with a composite primary key parent',
+          if: ActiveRecord.version >= Gem::Version.new('7.1') do
     let(:connection) { ActiveRecord::Base.connection }
 
     before do

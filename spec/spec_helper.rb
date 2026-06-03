@@ -10,6 +10,10 @@ SimpleCov.start
 
 require 'bundler/setup'
 require 'yaml'
+# ActiveSupport <= 6.1 does not require 'logger' itself; on Ruby 3.1+ the stdlib
+# logger is no longer auto-loaded, so load it before ActiveRecord to avoid an
+# "uninitialized constant ActiveSupport::LoggerThreadSafeLevel::Logger" error.
+require 'logger'
 require 'active_record'
 require 'friendly_fk'
 

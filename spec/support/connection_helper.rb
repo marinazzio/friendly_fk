@@ -19,7 +19,7 @@ module ARTest
     end
 
     def read_config
-      YAML.load(ERB.new(config_file.read).result, aliases: true)
+      YAML.safe_load(ERB.new(config_file.read).result, aliases: true)
     end
   end
 end
