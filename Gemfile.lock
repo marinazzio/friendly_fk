@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     friendly_fk (1.0.28)
-      activerecord
+      activerecord (>= 7.0, < 8.2)
 
 GEM
   remote: https://rubygems.org/
