@@ -16,3 +16,5 @@
 .dolt/
 *.db
 .beads-credential-key
+# per-ActiveRecord matrix gemfiles resolve fresh in CI
+gemfiles/*.gemfile.lock

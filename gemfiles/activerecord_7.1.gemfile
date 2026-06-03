@@ -1,0 +1,17 @@
+# frozen_string_literal: true
+
+# Pins ActiveRecord to the 7.1 series — the first release with composite
+# foreign key support — so CI exercises a mid-range version distinct from both
+# the 6.1 floor and the latest. Mirrors gemfiles/activerecord_6.1.gemfile.
+source 'https://rubygems.org'
+
+gemspec path: '..'
+
+gem 'activerecord', '~> 7.1.0'
+
+gem 'mysql2', require: false
+gem 'pg', require: false
+gem 'rake'
+gem 'rspec', require: false
+gem 'simplecov', require: false
+gem 'simplecov-rcov', require: false
