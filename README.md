@@ -3,7 +3,7 @@
 
 # FriendlyFk
 
-Uses child and parent table names to give FK name by default. It doesn't use hash tail, so use it carefully, 'cause it may generate non-unique names.
+Uses child and parent table names plus the referencing column to give every foreign key a readable name by default — e.g. `fk_child_table__parent_table__parent_id`. Folding the column in keeps names unique even when several foreign keys connect the same table pair. If the generated name would exceed the database's identifier limit, the column part is replaced with a short deterministic hash.
 
 ## Installation
 
