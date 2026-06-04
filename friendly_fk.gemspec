@@ -15,6 +15,7 @@ Gem::Specification.new do |spec|
   spec.metadata = {
     'allowed_push_host' => 'https://rubygems.org',
     'bug_tracker_uri' => 'https://github.com/marinazzio/friendly_fk/issues',
+    'changelog_uri' => 'https://github.com/marinazzio/friendly_fk/blob/master/CHANGELOG.md',
     'documentation_uri' => 'https://github.com/marinazzio/friendly_fk/blob/master/README.md',
     'homepage_uri' => 'https://github.com/marinazzio/friendly_fk',
     'source_code_uri' => 'https://github.com/marinazzio/friendly_fk',
@@ -23,7 +24,7 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 2.7.0'
 
-  spec.files = `git ls-files -z lib README.md LICENSE`.split("\x0")
+  spec.files = `git ls-files -z lib README.md LICENSE CHANGELOG.md`.split("\x0")
 
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
