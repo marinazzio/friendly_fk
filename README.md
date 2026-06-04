@@ -19,6 +19,36 @@ And then execute:
 
     $ bundle
 
+## Requirements
+
+- Ruby >= 2.7
+- ActiveRecord >= 6.1, < 8.2
+
 ## Usage
 
-Just use conventional call of `add_foreign_key` method.
+Just use the conventional `add_foreign_key` call in your migrations — FriendlyFk
+fills in the name automatically:
+
+```ruby
+add_foreign_key :comments, :posts
+# constraint name: fk_comments__posts__post_id
+
+add_foreign_key :comments, :users, column: :author_id
+# constraint name: fk_comments__users__author_id
+```
+
+Because the column is part of the name, multiple foreign keys between the same
+pair of tables get distinct names instead of colliding:
+
+```ruby
+add_foreign_key :messages, :users, column: :sender_id
+# constraint name: fk_messages__users__sender_id
+add_foreign_key :messages, :users, column: :recipient_id
+# constraint name: fk_messages__users__recipient_id
+```
+
+Pass an explicit `name:` to opt out of the generated name entirely:
+
+```ruby
+add_foreign_key :comments, :posts, name: 'my_custom_fk'
+```
