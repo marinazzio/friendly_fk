@@ -51,7 +51,7 @@ GEM
       prism (~> 1.5)
     mysql2 (0.5.7)
       bigdecimal
-    parallel (2.1.0)
+    parallel (1.28.0)
     parser (3.3.11.1)
       ast (~> 2.4.1)
       racc
@@ -134,6 +134,7 @@ DEPENDENCIES
   friendly_fk!
   fuubar
   mysql2
+  parallel (< 2.0)
   pg
   rake
   rspec
