@@ -20,6 +20,7 @@ jobs:
           - { ruby-version: '3.2', gemfile: Gemfile }
           - { ruby-version: '3.3', gemfile: Gemfile }
           - { ruby-version: '3.4', gemfile: Gemfile }
+          - { ruby-version: '4.0', gemfile: Gemfile }
 
     env:
       BUNDLE_GEMFILE: ${{ matrix.gemfile }}
